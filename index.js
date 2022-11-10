@@ -47,24 +47,7 @@ async function run() {
 
 
     
-    //   app.get('/orders', async (req, res) => {
-    //       const decoded = req.decoded;
-          
-    //       if(decoded.email !== req.query.email){
-    //           res.status(403).send({message: 'unauthorized access'})
-    //       }
-
-    //       let query = {};
-    //       if (req.query.email) {
-    //           query = {
-    //               email: req.query.email
-    //           }
-    //       }
-    //       const cursor = orderCollection.find(query);
-    //       const orders = await cursor.toArray();
-    //       res.send(orders);
-    //   });
-
+  
       app.post('/orders', async (req, res) => {
           const order = req.body;
           const result = await orderCollection.insertOne(order);
