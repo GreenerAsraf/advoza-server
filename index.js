@@ -31,11 +31,20 @@ async function run() {
       //     res.send({token})
       // })  
 
+      app.get('/threeServices', async (req, res) => {
+          const query = {}
+          const cursor = serviceCollection.find(query);
+          const services = await cursor.toArray();
+          res.send(services.slice(0,3));
+         
+      });
+
       app.get('/services', async (req, res) => {
           const query = {}
           const cursor = serviceCollection.find(query);
           const services = await cursor.toArray();
           res.send(services);
+         
       });
 
       app.get('/services/:id', async (req, res) => {
