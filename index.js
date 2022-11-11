@@ -11,9 +11,6 @@ const port =process.env.PORT ||5000;
 app.use(cors());
 app.use(express.json());
 
-//  console.log(process.env.DB_USER);
-//  console.log(process.env.DB_PASSWORD);
-// ooB7G0KVRk7BbeJT advoza 
 
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.eqsz8o8.mongodb.net/?retryWrites=true&w=majority`;
@@ -24,12 +21,7 @@ async function run() {
   try {
       const serviceCollection = client.db('advoza').collection('services');
       const orderCollection = client.db('advoza').collection('orders');
-
-      // app.post('/jwt', (req, res) =>{
-      //     const user = req.body;
-      //     const token = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1d'})
-      //     res.send({token})
-      // })  
+ 
 
       app.get('/threeServices', async (req, res) => {
           const query = {}
