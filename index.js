@@ -95,7 +95,7 @@ run().catch(err => console.error(err));
 
 
 app.get('/', (req, res) => {
-  res.send('Hello World!!!')
+  res.send('Advoza The law firm server site is running')
 })
 
 app.listen(port, () => {
